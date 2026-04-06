@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Daniel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: #020617;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  background: url('https://casaeconstrucao.vivadecora.com.br/wp-content/uploads/2020/11/A-lumin%C3%A1ria-trilho-traz-uma-nova-perspectiva-par-aa-decora%C3%A7%C3%A3o-de-barbearia.-Fonte-Pinterest.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px;
+}
+
+.overlay h1 {
+  font-size: 48px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+}
+
+/* BOTÕES */
+.buttons a {
+  text-decoration: none;
+  padding: 12px 25px;
+  margin: 10px;
+  background: #facc15;
+  color: black;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: #eab308;
+}
+
+/* SEÇÕES */
+.section {
+  position: relative;
+  padding: 80px 20px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(30,41,59,0.9);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* AGENDA */
+.agenda-box p {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* CARROSSEL */
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="overlay">
+    <h1>💈 Barbearia Daniel</h1>
+    <p>Estilo, precisão e confiança</p>
+
+    <div class="buttons">
+      <a href="#cortes">Ver Preços</a>
+      <a href="#">Ir para Loja</a>
+    </div>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section class="section" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsrQ7jze5Hnlcv9xtqYKqtohoxrFoZZnGTPA&s');">
+  <div class="content">
+    <h2>Sobre</h2>
+    <p>Ambiente moderno, cortes profissionais e atendimento premium para elevar seu estilo.</p>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="section" style="background-image:url('https://img.criativodahora.com.br/homologacao/thumbs/2025/10/22/019a0e64-4902-7251-9f83-503937af316c.jpg');">
+  <div class="content">
+    <h2>Horários</h2>
+    <div class="agenda-box">
+      <p>Segunda - Sexta: 09:00 - 19:00</p>
+      <p>Sábado: 09:00 - 17:00</p>
+      <p>Domingo: Fechado</p>
+    </div>
+  </div>
+</section>
+
+<!-- CORTES -->
+<section id="cortes" class="section" style="background-image:url('https://img.cdndsgni.com/preview/13002881.jpg');">
+  <div class="content">
+    <h2>Cortes</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?haircut">
+        <h3>Corte Tradicional</h3>
+        <p>R$ 30</p>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?barber">
+        <h3>Degradê</h3>
+        <p>R$ 40</p>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?beard">
+        <h3>Barba</h3>
+        <p>R$ 25</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="section" style="background-image:url('https://shoppinglaplage.com.br/wp-content/uploads/2021/09/shakiti-cosmeticos-shopping-la-plage2.jpg');">
+  <div class="content">
+    <h2>Produtos</h2>
+
+    <div class="carousel">
+      <div class="card">
+        <img src="https://source.unsplash.com/200x200/?perfume">
+        <p>Perfume</p>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/200x200/?hair-product">
+        <p>Pomada</p>
+      </div>
+
+      <div class="card">
+        <img src="https://source.unsplash.com/200x200/?cream">
+        <p>Creme</p>
+      </div>
+    </div>
+
+    <br>
+    <a href="#" class="buttons">Ver mais</a>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section" style="background-image:url('https://casaeconstrucao.vivadecora.com.br/wp-content/uploads/2020/11/A-lumin%C3%A1ria-trilho-traz-uma-nova-perspectiva-par-aa-decora%C3%A7%C3%A3o-de-barbearia.-Fonte-Pinterest.jpg');">
+  <div class="content">
+    <h2>Agendar</h2>
+
+    <form>
+      <input type="text" placeholder="Nome" required>
+      <input type="text" placeholder="Cidade" required>
+
+      <select>
+        <option>Horário</option>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+      </select>
+
+      <button>Agendar</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
