@@ -30,7 +30,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.85);
 }
 
 .overlay {
@@ -42,11 +42,10 @@ body {
 
 .overlay h1 {
   font-size: 48px;
-  text-shadow: 0 3px 15px rgba(0,0,0,0.9);
 }
 
 /* BOTÕES */
-.buttons a {
+.buttons a, .btn {
   text-decoration: none;
   padding: 12px 25px;
   margin: 10px;
@@ -54,25 +53,11 @@ body {
   color: black;
   border-radius: 8px;
   font-weight: bold;
-}
-
-.buttons a:hover {
-  background: #eab308;
-}
-
-/* BOTÃO NOVO */
-.btn {
   display: inline-block;
-  padding: 12px 25px;
-  background: #facc15;
-  color: black;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
   transition: 0.3s;
 }
 
-.btn:hover {
+.buttons a:hover, .btn:hover {
   background: #eab308;
   transform: scale(1.05);
 }
@@ -84,20 +69,21 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.88);
 }
 
 .content {
   position: relative;
   z-index: 1;
-  background: rgba(0,0,0,0.88);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(6px);
   padding: 30px;
   border-radius: 15px;
   max-width: 1000px;
@@ -129,10 +115,9 @@ body {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  padding: 10px;
 }
 
-/* CARD COM FUNDO */
+/* CARDS COM IMAGEM DE FUNDO */
 .bg {
   height: 200px;
   min-width: 180px;
@@ -150,27 +135,45 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.65);
 }
 
 .bg p {
   position: relative;
   z-index: 1;
   font-weight: bold;
-  font-size: 18px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   padding: 5px 10px;
   border-radius: 6px;
 }
 
-.carousel .card:hover {
-  transform: scale(1.08);
+/* AGENDA */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 30px;
 }
 
-/* AGENDA */
-.agenda-box p {
-  padding: 10px;
+.agenda-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.agenda-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.map {
+  margin-top: 15px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /* FORM */
@@ -193,10 +196,6 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-}
-
-h1, h2, h3 {
-  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
 </style>
@@ -224,20 +223,41 @@ h1, h2, h3 {
     <p>
 Na Barbearia Daniel, estilo não é detalhe — é prioridade.
 Oferecemos cortes modernos, acabamento impecável e um atendimento que faz você voltar sempre.
-Nosso espaço foi criado para proporcionar conforto, confiança e aquela sensação de sair renovado.
 Aqui você não corta só o cabelo, você eleva seu visual.
-</p>
+    </p>
   </div>
 </section>
 
 <!-- AGENDA -->
 <section class="section" style="background-image:url('https://img.criativodahora.com.br/homologacao/thumbs/2025/10/22/019a0e64-4902-7251-9f83-503937af316c.jpg');">
   <div class="content">
-    <h2>Horários</h2>
-    <div class="agenda-box">
-      <p>Segunda - Sexta: 09:00 - 19:00</p>
-      <p>Sábado: 09:00 - 17:00</p>
-      <p>Domingo: Fechado</p>
+    <h2>Horários & Localização</h2>
+
+    <div class="agenda-grid">
+
+      <div class="agenda-card">
+        <h3>🕒 Horários</h3>
+        <div class="agenda-item"><span>Seg-Sex</span><span>09:00 - 19:00</span></div>
+        <div class="agenda-item"><span>Sábado</span><span>09:00 - 17:00</span></div>
+        <div class="agenda-item"><span>Domingo</span><span>Fechado</span></div>
+      </div>
+
+      <div class="agenda-card">
+        <h3>📍 Localização</h3>
+        <p>Barbearia Daniel</p>
+        <p>Sua cidade - Brasil</p>
+
+       <div class="map">
+  <iframe 
+    src="https://www.google.com/maps?q=R.+Ant%C3%B4nio+Carlos+Figueredo,+50,+Itaja%C3%AD,+SC&output=embed"
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    loading="lazy">
+  </iframe>
+</div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -246,22 +266,10 @@ Aqui você não corta só o cabelo, você eleva seu visual.
 <section id="cortes" class="section" style="background-image:url('https://img.cdndsgni.com/preview/13002881.jpg');">
   <div class="content">
     <h2>Cortes</h2>
-
     <div class="grid">
-      <div class="card">
-        <h3>Corte Tradicional</h3>
-        <p>R$ 30</p>
-      </div>
-
-      <div class="card">
-        <h3>Degradê</h3>
-        <p>R$ 40</p>
-      </div>
-
-      <div class="card">
-        <h3>Barba</h3>
-        <p>R$ 25</p>
-      </div>
+      <div class="card"><h3>Corte Tradicional</h3><p>R$ 30</p></div>
+      <div class="card"><h3>Degradê</h3><p>R$ 40</p></div>
+      <div class="card"><h3>Barba</h3><p>R$ 25</p></div>
     </div>
   </div>
 </section>
@@ -272,24 +280,12 @@ Aqui você não corta só o cabelo, você eleva seu visual.
     <h2>Produtos</h2>
 
     <div class="carousel">
-
-      <div class="card bg" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoLtOU4GoSpc1DtySNvgNAHWzMC3yCvJ0EA&s')">
-        <p>Perfume</p>
-      </div>
-
-      <div class="card bg" style="background-image:url('https://cf.shopee.com.br/file/d082e5b84a4bfebf21b0b5d5e758337f')">
-        <p>Pomada</p>
-      </div>
-
-      <div class="card bg" style="background-image:url('https://coisasdediva.wordpress.com/wp-content/uploads/2024/04/natura-cereja.jpg')">
-        <p>Creme</p>
-      </div>
-
+      <div class="card bg" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoLtOU4GoSpc1DtySNvgNAHWzMC3yCvJ0EA&s')"><p>Perfume</p></div>
+      <div class="card bg" style="background-image:url('https://cf.shopee.com.br/file/d082e5b84a4bfebf21b0b5d5e758337f')"><p>Pomada</p></div>
+      <div class="card bg" style="background-image:url('https://coisasdediva.wordpress.com/wp-content/uploads/2024/04/natura-cereja.jpg')"><p>Creme</p></div>
     </div>
 
-    <div style="text-align:center; margin-top:20px;">
-      <a href="#" class="btn">Ver mais produtos</a>
-    </div>
+    <a href="#" class="btn">Ver mais produtos</a>
 
   </div>
 </section>
@@ -300,18 +296,16 @@ Aqui você não corta só o cabelo, você eleva seu visual.
     <h2>Agendar</h2>
 
     <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="text" placeholder="Cidade" required>
-
+      <input type="text" placeholder="Nome">
+      <input type="text" placeholder="Cidade">
       <select>
         <option>Horário</option>
         <option>09:00</option>
         <option>10:00</option>
-        <option>11:00</option>
       </select>
-
       <button>Agendar</button>
     </form>
+
   </div>
 </section>
 
