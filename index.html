@@ -308,30 +308,33 @@ Aqui você não corta só o cabelo, você eleva seu visual.
   <div class="content">
     <h2>Agendar</h2>
 
- <form onsubmit="enviarWhats(event)">
-  <input type="text" id="nome" placeholder="Nome" required>
-  <input type="text" id="cidade" placeholder="Cidade" required>
+    <form onsubmit="enviarWhats(event)">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="text" id="cidade" placeholder="Cidade" required>
 
-  <label>Escolha o dia:</label>
-  <input type="date" id="data" required>
+      <label>Escolha o dia:</label>
+      <input type="date" id="data" required onclick="this.showPicker()">
 
-  <label>Escolha o horário:</label>
-  <select id="hora" required>
-    <option value="">Selecione</option>
-    <option>07:00 - 08:00</option>
-    <option>08:00 - 09:00</option>
-    <option>09:00 - 10:00</option>
-    <option>10:00 - 11:00</option>
-    <option>11:00 - 12:00</option>
-    <option>13:00 - 14:00</option>
-    <option>14:00 - 15:00</option>
-    <option>15:00 - 16:00</option>
-    <option>16:00 - 17:00</option>
-    <option>17:00 - 18:00</option>
-  </select>
+      <label>Escolha o horário:</label>
+      <select id="hora" required>
+        <option value="">Selecione</option>
+        <option>07:00 - 08:00</option>
+        <option>08:00 - 09:00</option>
+        <option>09:00 - 10:00</option>
+        <option>10:00 - 11:00</option>
+        <option>11:00 - 12:00</option>
+        <option>13:00 - 14:00</option>
+        <option>14:00 - 15:00</option>
+        <option>15:00 - 16:00</option>
+        <option>16:00 - 17:00</option>
+        <option>17:00 - 18:00</option>
+      </select>
 
-  <button type="submit">Agendar</button>
-</form>
+      <button type="submit">Agendar</button>
+    </form>
+
+  </div>
+</section>
 
   </div>
 </section>
