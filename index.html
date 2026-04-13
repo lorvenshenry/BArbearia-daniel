@@ -44,6 +44,12 @@ body {
   font-size: 48px;
 }
 
+.logo {
+  width:500px; /* Altere este valor para aumentar a imagem */
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(255,215,0,0.5));
+}
+
 /* BOTÕES */
 .buttons a, .btn {
   text-decoration: none;
@@ -219,8 +225,9 @@ input:focus, select:focus {
 <!-- HERO -->
 <header class="hero">
   <div class="overlay">
-    <h1>💈 BM Barbearia e Cosméticos 💈</h1>
-    <p>Estilo, precisão e confiança</p>
+    <img src="logo.png" class="logo">
+
+    <p class="slogan">Estilo, precisão e confiança</p>
 
     <div class="buttons">
       <a href="#cortes">Barbearia</a>
